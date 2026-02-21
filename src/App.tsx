@@ -1,9 +1,9 @@
 import './App.css'
 import { fetchData } from './api/api';
 import { useEffect, useState } from 'react';
-import ArtworkTable from '../components/ArtworkTable'
+import ArtworkTable from './components/ArtworkTable'
 import type Artwork from '../types'
-import Footer from '../components/Footer'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
 
 
   return (
-    <main className="py-3 px-10">
+    <main className="py-1 px-5 flex flex-col gap-5">
        <ArtworkTable artworks={artworks} /> 
        <Footer currentPage={page} onPageChange={(newPage: number) => setPage(newPage)} totalPageRecords={totalPages}/>
     </main>
