@@ -12,10 +12,9 @@ const ArtworkTable = ({ artworks }: ArtworkTableProps) => {
   const [rowsPerPage] = useState<number>(12);
   const [selectedArt, setSelectedArt] = useState<Artwork[]>([]);
   const [metaKey, setMetaKey] = useState<boolean>(false)
-  const [first, setFirst] = useState(0);
   const [selectCount, setSelectCount] = useState<number>(0)
 
-  const currentPageRows = artworks.slice(first, first + rowsPerPage);
+  const currentPageRows = artworks.slice(0, rowsPerPage);
 
   const isSelected = (row: Artwork) => selectedArt.some(a => a.id === row.id)
 
@@ -32,10 +31,6 @@ const ArtworkTable = ({ artworks }: ArtworkTableProps) => {
       return [...prev, ...newOnes];
     });
   };
-
-
-  console.log(selectedArt)
-
 
   return (
 
