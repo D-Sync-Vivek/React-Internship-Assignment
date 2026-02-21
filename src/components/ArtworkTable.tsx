@@ -50,7 +50,7 @@ const ArtworkTable = ({ artworks }: ArtworkTableProps) => {
           onClick={handleApplySelectCount}
           className="px-3 py-1 border rounded"
         >
-          Select N on this page
+          Select {selectCount} on this page
         </button>
       </div>
       <DataTable
